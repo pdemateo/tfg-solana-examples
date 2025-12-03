@@ -50,7 +50,7 @@ pub struct Increment<'info> {
 // --- ESTADO ---
 
 #[account]
-#[derive(InitSpace)]
+#[derive(InitSpace)] // Calcula automáticamente el tamaño (u64 = 8 bytes)   
 pub struct Counter {
     pub count: u64,
 }
