@@ -1,0 +1,19 @@
+.anchor
+.DS_Store
+target/
+node_modules/
+test-ledger/
+.yarn/
+
+# Seguridad - Wallets y claves
+**/*.json
+!Anchor.toml
+!package.json
+!tsconfig.json
+
+# Logs y backups
+yarn-error.log
+*.rs.bk
+
+# Entorno
+.env
