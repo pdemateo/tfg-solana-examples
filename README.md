@@ -16,14 +16,14 @@ El proyecto se divide en módulos que ilustran diferentes conceptos de arquitect
 Demostración de una llamada entre programas donde un programa delega la ejecución a otro sin comprobaciones de autoridad complejas.
 * **`programs/cpi_engine` (Destino)**:
     * Gestiona el estado de un "motor" (RPM).
-* **`programs/cpi_lever` (Llamante)**:
+* **`programs/cpi_lever` (Origen)**:
     * Actúa como una "palanca". Recibe la instrucción del usuario y la reenvía al motor mediante `CpiContext::new`.
 
 ### 3. CPI Autenticada (Seguridad con PDAs)
 Demostración avanzada donde el programa destino requiere una firma autorizada, la cual es generada por el proxy.
 * **`programs/cpi_secure_vault` (Destino)**:
     * Una bóveda que solo permite modificaciones si una autoridad específica firma la transacción.
-* **`programs/cpi_secure_proxy` (Llamante)**:
+* **`programs/cpi_secure_proxy` (Origen)**:
     * Utiliza una **Program Derived Address (PDA)** para firmar la llamada CPI (`CpiContext::new_with_signer`).
 
 ---
