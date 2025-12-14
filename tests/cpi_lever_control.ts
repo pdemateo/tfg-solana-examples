@@ -13,7 +13,7 @@ describe("TFG: CPI Architecture (Engine & Lever)", () => {
   const engineProgram = anchor.workspace.CpiEngine as Program<CpiEngine>;
   const leverProgram = anchor.workspace.CpiLever as Program<CpiLever>;
 
-  // Generación de una nueva cuenta para el motor (Keypair)
+  // Generación de una nueva cuenta para el motor
   const engineAccount = anchor.web3.Keypair.generate();
 
   it("Paso 1: Inicialización del Motor (Estado Base)", async () => {

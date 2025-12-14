@@ -35,8 +35,8 @@ pub mod cpi_engine {
 pub struct Initialize<'info> {
     #[account(
         init,
-        payer = user,
-        space = 8 + EngineStats::INIT_SPACE // 8 bytes discriminador + Tamaño del struct
+        space = 8 + EngineStats::INIT_SPACE, // 8 bytes discriminador + Tamaño del struct
+        payer = user
     )]
     pub engine_account: Account<'info, EngineStats>,
 

@@ -1,4 +1,17 @@
+// ---------------------------------------------------------
+// PROGRAMA: Counter (Ejemplo Base)
+// 
+// NOTA DE ATRIBUCIÓN:
+// Este programa está adaptado del ejemplo oficial de Solana Developers.
+// Fuente original: https://github.com/solana-developers/program-examples/blob/main/basics/counter/anchor/programs/counter_anchor/src/lib.rs
+//
+// Modificaciones realizadas:
+// - Añadidos comentarios explicativos en español.
+// - Modificación de la función de incremento para usar checked_add y evitar desbordamientos.
+// ---------------------------------------------------------
+
 use anchor_lang::prelude::*;
+use anchor_lang::error::ErrorCode;
 
 declare_id!("7XBBYkPXKXA7bMC3eJwgmYKmmjqmGrTs15FFmJPELWau");
 
@@ -18,7 +31,8 @@ pub mod counter {
     pub fn increment(ctx: Context<Increment>) -> Result<()> {
         let counter = &mut ctx.accounts.counter;
         // Uso de checked_add para evitar desbordamientos (overflow protection)
-        counter.count = counter.count.checked_add(1).unwrap();
+        counter.count = counter.count.checked_add(1)
+            .ok_or(error!(ErrorCode::IntegerOverflow))?; // Devuelve un error controlado
         msg!("Counter incremented. New count: {}", counter.count);
         Ok(())
     } 

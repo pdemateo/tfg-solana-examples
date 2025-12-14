@@ -8,13 +8,15 @@ skip-lint = false
 counter = "7XBBYkPXKXA7bMC3eJwgmYKmmjqmGrTs15FFmJPELWau"
 cpi_engine = "HdD4VXi25uuvN9QnQXmAjRix9ELk7HmWEm9Xq5qdk9pE"
 cpi_lever = "2XAFBGfTy3NXB33XAh26MQwSeLo1Ku8tErHvjrMdWxKN"
+cpi_secure_proxy = "BfZQac4ivDdAC9jhvWFV5sdaioSRpmKK4U3ND6nCLYkG"
+cpi_secure_vault = "4s6WGZESrg51X63AbYT94uxck9fSBuPM2EeUk5wbZcxV"
 tfg_solana_examples = "69jMTi6NzcQ7qdns7YkGDa5x9puPYp3bZkXKEgVdtzMZ"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "localnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
