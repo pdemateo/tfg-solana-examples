@@ -3,7 +3,7 @@ import { Program } from "@coral-xyz/anchor";
 import { Counter } from "../target/types/counter";
 import { assert } from "chai";
 
-describe("TFG: Integration Tests for Counter Program", () => {
+describe("TFG: Pruebas de Integración para el Programa Contador", () => {
     // Configuración del proveedor de red local y wallet
     const provider = anchor.AnchorProvider.env();
     anchor.setProvider(provider);
@@ -14,7 +14,7 @@ describe("TFG: Integration Tests for Counter Program", () => {
     // Generación de un par de claves para la nueva cuenta de contador
     const counterAccount = anchor.web3.Keypair.generate();
 
-    it("Should initialize the counter to 0", async () => {
+    it("Debe inicializar el contador a 0", async () => {
         // Invocación RPC al método 'initialize_counter'
         await program.methods
             .initializeCounter()
@@ -35,7 +35,7 @@ describe("TFG: Integration Tests for Counter Program", () => {
         assert.ok(accountState.count.eqn(0), "El estado inicial debe ser 0");
     });
 
-    it("Should increment the counter", async () => {
+    it("Debe incrementar el contador", async () => {
         // Invocación RPC al método 'increment'
         await program.methods
             .increment()

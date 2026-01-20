@@ -10,13 +10,14 @@ cpi_engine = "HdD4VXi25uuvN9QnQXmAjRix9ELk7HmWEm9Xq5qdk9pE"
 cpi_lever = "2XAFBGfTy3NXB33XAh26MQwSeLo1Ku8tErHvjrMdWxKN"
 cpi_secure_proxy = "BfZQac4ivDdAC9jhvWFV5sdaioSRpmKK4U3ND6nCLYkG"
 cpi_secure_vault = "4s6WGZESrg51X63AbYT94uxck9fSBuPM2EeUk5wbZcxV"
+spl_token_example = "8TcA7B4GMhsu6GNgUChTLrSp59ufp68Seee1XToY6wfD"
 tfg_solana_examples = "69jMTi6NzcQ7qdns7YkGDa5x9puPYp3bZkXKEgVdtzMZ"
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "Localnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

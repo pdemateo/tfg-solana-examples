@@ -4,7 +4,7 @@ import { CpiEngine } from "../target/types/cpi_engine";
 import { CpiLever } from "../target/types/cpi_lever";
 import { assert } from "chai";
 
-describe("TFG: CPI Architecture (Engine & Lever)", () => {
+describe("TFG: Arquitectura CPI (Motor y Palanca)", () => {
   // Configuración del proveedor y conexión al nodo local
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);

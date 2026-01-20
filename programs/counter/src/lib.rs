@@ -22,7 +22,9 @@ pub mod counter {
     use super::*;
 
     /// Inicializa una nueva cuenta de contador.
-    pub fn initialize_counter(_ctx: Context<InitializeCounter>) -> Result<()> {
+    pub fn initialize_counter(ctx: Context<InitializeCounter>) -> Result<()> {
+        let counter = &mut ctx.accounts.counter;
+        counter.count = 0;
         msg!("Counter Account Created");
         Ok(())
     }
@@ -32,7 +34,7 @@ pub mod counter {
         let counter = &mut ctx.accounts.counter;
         // Uso de checked_add para evitar desbordamientos (overflow protection)
         counter.count = counter.count.checked_add(1)
-            .ok_or(error!(ErrorCode::IntegerOverflow))?; // Devuelve un error controlado
+            .ok_or(error!(MyError::Overflow))?;
         msg!("Counter incremented. New count: {}", counter.count);
         Ok(())
     } 
@@ -67,4 +69,13 @@ pub struct Increment<'info> {
 #[derive(InitSpace)] // Calcula automáticamente el tamaño (u64 = 8 bytes)   
 pub struct Counter {
     pub count: u64,
+}
+
+// --- ERRORES PERSONALIZADOS ---
+
+#[error_code]
+/// Definición de los errores controlados del programa
+pub enum MyError {
+    #[msg("Ha ocurrido un desbordamiento aritmético (Overflow).")]
+    Overflow,
 }
